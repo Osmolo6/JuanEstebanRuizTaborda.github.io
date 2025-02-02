@@ -1,0 +1,430 @@
+/* CSS completo */
+:root {
+    --primary-color: #1a1a1a;
+    --secondary-color: #fff9f0;
+    --accent-color: #ffc107;
+    --text-color: #333;
+    --transition: all 0.3s ease;
+    --h3-color: #ffd103;
+    --card-bg: rgba(255, 255, 255, 0.95);
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --card-hover-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+    --nav-bg: rgba(26, 26, 26, 0.95);
+    --nav-blur: blur(5px);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    line-height: 1.7;
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+    position: relative;
+    min-height: 100vh;
+}
+
+.main-header {
+    background: linear-gradient(rgba(255, 209, 3, 0.5), rgba(255, 209, 3, 0.5)),
+                url('https://smenor.edu.co/wp-content/uploads/2024/01/IMG_E4470-768x768.jpg') center/cover;
+    padding: 4rem 1rem;
+    margin: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.header-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+.main-nav {
+    background: var(--nav-bg);
+    backdrop-filter: var(--nav-blur);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    list-style: none;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+    background: var(--accent-color);
+    color: var(--primary-color);
+}
+
+.profile-section {
+    text-align: center;
+    margin: 3rem 0;
+    position: relative;
+    z-index: 1;
+}
+
+.profile-container img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 4px solid var(--accent-color);
+    box-shadow: 0 8px 24px rgba(255, 193, 7, 0.2);
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.profile-container img:hover {
+    transform: scale(1.1);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.proposal-card,
+.about,
+.contact-info {
+    background: var(--card-bg);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin: 1.5rem 0;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proposal-card:hover,
+.about:hover,
+.contact-info:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-hover-shadow);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.social-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--accent-color);
+    color: var(--primary-color);
+    border-radius: 2rem;
+    text-decoration: none;
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.social-button:hover {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+.main-footer {
+    background: black;
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+    position: relative;
+    z-index: 1;
+}
+
+.contenido-pie {
+    position: relative;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Estilos para los filtros */
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.filter-buttons input[type="radio"] {
+    display: none;
+}
+
+.filter-buttons label {
+    padding: 0.5rem 1rem;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.filter-buttons label:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+.filter-buttons input[type="radio"]:checked + label {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+/* Estilos para las tarjetas de propuestas */
+.proposal-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.proposal-card {
+    background: var(--card-bg);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    display: none; /* Ocultar inicialmente */
+    position: relative;
+    overflow: hidden;
+}
+
+.proposal-card.show {
+    display: block; /* Mostrar cuando tenga la clase "show" */
+}
+
+.proposal-card:hover {
+    transform: scale(1.05); /* Agrandar la tarjeta */
+    box-shadow: 0 8px 24px rgba(255, 193, 7, 0.4); /* Sombra más pronunciada */
+    border: 2px solid var(--accent-color); /* Marco brillante */
+}
+
+/* Efecto de brillo al pasar el cursor */
+.proposal-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle, rgba(255, 209, 3, 0.3), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none; /* Evitar que interfiera con los clics */
+}
+
+.proposal-card:hover::before {
+    opacity: 1; /* Mostrar el brillo al pasar el cursor */
+}
+
+/* Estilos para la sección de Propuestas Estrella */
+.star-proposals {
+    margin: 3rem 0;
+    text-align: center;
+    padding: 4rem 1rem;
+    background: linear-gradient(rgba(255, 209, 3, 0.5), rgba(255, 209, 3, 0.5)),
+                url('ruta/a/tu-imagen-de-fondo.jpg') center/cover;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.star-proposals::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 249, 240, 0.8); /* Fondo semi-transparente para mejorar la legibilidad */
+    border-radius: 1rem;
+    z-index: -1;
+}
+
+.star-proposals h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.star-proposals-list {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+}
+
+.star-proposal {
+    background: var(--card-bg);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    max-width: 300px;
+    text-align: left;
+}
+
+.star-proposal h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #ffd103; /* Color amarillo para los títulos */
+}
+
+.star-proposal p {
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.star-proposal:hover {
+    transform: scale(1.05); /* Agrandar la tarjeta */
+    box-shadow: 0 8px 24px rgba(255, 193, 7, 0.4); /* Sombra más pronunciada */
+    border: 2px solid var(--accent-color); /* Marco brillante */
+}
+
+/* Efecto de brillo al pasar el cursor */
+.star-proposal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle, rgba(255, 209, 3, 0.3), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none; /* Evitar que interfiera con los clics */
+}
+
+.star-proposal:hover::before {
+    opacity: 1; /* Mostrar el brillo al pasar el cursor */
+}
+
+/* Estilos responsivos para móviles */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .contact-info {
+        padding: 1rem;
+    }
+
+    .contact-info address p {
+        margin-bottom: 0.5rem;
+    }
+
+    .social-links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .social-button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .star-proposals {
+        padding: 2rem 1rem;
+    }
+
+    .star-proposals h2 {
+        font-size: 2rem;
+    }
+
+    .star-proposals-list {
+        gap: 1rem;
+    }
+
+    .star-proposal {
+        max-width: 100%;
+    }
+
+    .team-members {
+        gap: 1rem;
+    }
+
+    .team-member {
+        max-width: 100%;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .main-nav a {
+        padding: 0.5rem 1rem;
+    }
+
+    .main-header {
+        padding: 2rem 1rem;
+    }
+
+    .header-content h1 {
+        font-size: 1.75rem;
+    }
+
+    .header-content .subtitle {
+        font-size: 1rem;
+    }
+
+    .main-footer {
+        padding: 1rem;
+    }
+
+    .contenido-pie p {
+        font-size: 0.9rem;
+    }
+}
